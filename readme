@@ -1,0 +1,14 @@
+# search-insert-pos-leetcode-
+class Solution:
+    def searchInsert(self, nums: List[int], target: int) -> int:
+        for i,k in enumerate(nums):
+            if k==target:
+                return i
+        if target not in nums:
+            for j in range(len(nums)):
+                if target<nums[j]:
+                    return j
+                elif target>nums[len(nums)-1]:
+                    return len(nums)
+                else:
+                    continue
